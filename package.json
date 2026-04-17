@@ -1,0 +1,41 @@
+{
+    "name": "ilias-client",
+    "description": "Inofficial client library for fetching data from ILIAS instances",
+    "version": "0.0.1",
+    "module": "dist/lib.js",
+    "types": "dist/types/lib.d.ts",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/types/lib.d.ts",
+            "default": "./dist/lib.js"
+        }
+    },
+    "scripts": {
+        "generate-types": "bunx tsc -d -m esnext -t esnext --outDir ./dist/types -p tsconfig.json --allowImportingTsExtensions false --emitDeclarationOnly --noEmit false",
+        "bundle-lib": "bun build --target=node --format=esm --packages=external --keep-names --outfile=./dist/lib.js ./src/lib.ts",
+        "build-lib": "rm -rf ./dist && mkdir -p ./dist/types && bun run generate-types && bun run bundle-lib"
+    },
+    "author": "thatmarcel <contact@thatmarcel.com>",
+    "license": "AGPL-3.0-only",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/thatmarcel/ilias-client.git"
+    },
+    "keywords": [
+        "ilias"
+    ],
+    "packageManager": "bun@1.3.11",
+    "devDependencies": {
+        "@types/bun": "latest"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    }
+}
