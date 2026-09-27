@@ -1,7 +1,7 @@
 {
     "name": "ilias-client",
     "description": "Inofficial client library for fetching data from ILIAS instances",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "module": "dist/lib.js",
     "types": "dist/types/lib.d.ts",
     "type": "module",
