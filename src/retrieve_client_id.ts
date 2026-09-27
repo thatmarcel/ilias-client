@@ -3,7 +3,7 @@ import instanceFetch from "./instance_fetch";
 import type { InstanceInfo } from "./instance_info";
 
 const retrieveClientId = async ({ endpoint, ...options }: InstanceInfo & ClientOptions) => {
-    const response = await instanceFetch(`${endpoint}?baseClass=ilrepositorygui&ref_id=1`, options);
+    const response = await instanceFetch(`${endpoint}?baseClass=ilrepositorygui&ref_id=1`, { ...options, redirect: "follow" });
 
     if (response.status !== 200) {
         throw "Server returned non-200 status code when trying to retrieve client id";

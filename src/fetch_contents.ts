@@ -9,6 +9,7 @@ const contentsListItemRegex = /<a href="([^"]+?)" class="il_ContainerItemTitle".
 const fetchContents = async ({ endpoint, sessionId, clientId, ...options }: Cookies & InstanceInfo & ClientOptions, refId: string): Promise<ContentItem[]> => {
     const response = await instanceFetch(`${endpoint}?baseClass=ilrepositorygui&ref_id=${refId}`, {
         ...options,
+        redirect: "follow",
         sessionId,
         clientId
     });

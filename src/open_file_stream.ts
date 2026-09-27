@@ -4,7 +4,7 @@ import instanceFetch from "./instance_fetch";
 import type { InstanceInfo } from "./instance_info";
 
 const openFileStream = async ({ endpoint, sessionId, clientId, ...options }: Cookies & InstanceInfo & ClientOptions, refId: string) => {
-    const response = await instanceFetch(`${endpoint}?baseClass=ilrepositorygui&cmdNode=z4:o1&cmdClass=ilObjFileGUI&cmd=sendfile&ref_id=${refId}`, {
+    const response = await instanceFetch(`${endpoint}?baseClass=ilrepositorygui&cmdClass=ilObjFileGUI&cmd=sendfile&ref_id=${refId}`, {
         ...options,
         sessionId,
         clientId
